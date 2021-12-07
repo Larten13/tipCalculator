@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Калькулятор чаюхи</string>
+    <string name="cost_of_service">Введи сумму</string>
+    <string name="how_was_the_service">Общая сумма чека</string>
+    <string name="amazing_20">Чотка (20%)</string>
+    <string name="good_18">Норм (18%)</string>
+    <string name="okay_15">Под пиво пойдет (15%)</string>
+    <string name="round_up_tip">Округлить в большую сторону?</string>
+    <string name="calculate">Посчитать</string>
+    <string name="tip_amount">Сумма чаюхи: %s</string>
+</resources>
