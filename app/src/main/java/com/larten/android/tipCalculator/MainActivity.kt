@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.calculateButton.setOnClickListener { displayTip() }
+        binding.calculateButton.setOnClickListener { displaySum() }
     }
 
     private fun calculateCost(): Double {
-        val stringInTextField = binding.costOfService.text.toString()
+        val stringInTextField = binding.costOfServiceEditText.text.toString()
         val cost = stringInTextField.toDoubleOrNull()
         return if (cost == null || cost == 0.0) {
             0.0
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun displayTip() {
+    private fun displaySum() {
         val tip = calculateTipOfUser()
         val sumOfUser = calculateSumOfUser()
         val summaryOfUser = tip + sumOfUser

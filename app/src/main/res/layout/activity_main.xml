@@ -7,14 +7,40 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <EditText
+    <ImageView
+        android:id="@+id/drawable_store"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cost_of_service"
+        app:layout_constraintBottom_toBottomOf="@id/cost_of_service"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_store"/>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cost_of_service"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:hint="@string/cost_of_service"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/drawable_store"
+        app:layout_constraintTop_toTopOf="parent"
+        android:hint="@string/cost_of_service">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cost_of_service_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/cost_of_service"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="@string/cost_of_service"-->
+<!--        android:inputType="numberDecimal"-->
+<!--        app:layout_constraintStart_toEndOf="@id/cost_of_service"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
 
     <TextView
         android:id="@+id/service_of_question"
@@ -91,9 +117,7 @@
             android:text="@string/okay_3" />
     </RadioGroup>
 
-
-
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/round_up_switch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
