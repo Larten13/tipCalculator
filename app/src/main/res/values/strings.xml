@@ -1,16 +1,17 @@
 <resources>
-    <string name="app_name">Калькулятор чаюхи</string>
+    <string name="app_name">Калькулятор еврейский</string>
     <string name="cost_of_service">Введи сумму</string>
-    <string name="how_was_the_service">Общая сумма чека</string>
-    <string name="amazing_20">Чотка (20%)</string>
-    <string name="good_18">Норм (18%)</string>
-    <string name="okay_15">Под пиво пойдет (15%)</string>
+    <string name="how_many_guests">Колличество гостей</string>
+    <string name="how_was_service">Насколько хорошее обслуживание</string>
+    <string name="amazing_10">Чотка (10%)</string>
+    <string name="good_5">Норм (5%)</string>
+    <string name="okay_3">Под пиво пойдет (3%)</string>
     <string name="round_up_tip">Округлить в большую сторону?</string>
     <string name="calculate">Посчитать</string>
-    <string name="tip_amount">Сумма чаюхи: %s</string>
+    <string name="tip_amount">Сумма с одного (с учетом чаюхи): %s</string>
     <string name="user1">1</string>
     <string name="user2">2</string>
     <string name="user3">3</string>
     <string name="user4">4</string>
-    <string name="how_many_guests">Сколько гостей</string>
+
 </resources>
