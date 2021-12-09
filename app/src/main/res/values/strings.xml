@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Калькулятор еврейский</string>
     <string name="cost_of_service">Введи сумму</string>
-    <string name="how_many_guests">Колличество гостей</string>
+    <string name="how_many_guests">Количество гостей</string>
     <string name="how_was_service">Насколько хорошее обслуживание</string>
     <string name="amazing_10">Чотка (10%)</string>
     <string name="good_5">Норм (5%)</string>
