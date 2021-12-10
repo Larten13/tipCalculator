@@ -65,7 +65,5 @@ class MainActivity : AppCompatActivity() {
         val summaryOfUser = tip + sumOfUser
         val formattedSum = NumberFormat.getCurrencyInstance().format(summaryOfUser)
         binding.tipResult.text = getString(R.string.tip_amount, formattedSum)
-//        binding.tipTest.text = tip.toString()
-//        binding.tipTest2.text = sumOfUser.toString()
     }
 }
