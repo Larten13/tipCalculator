@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateCost(): Double {
-        val stringInTextField = binding.costOfServiceEditText.text.toString()
+        val stringInTextField = binding.costOfServiceEditText.text.toString().replace(",", ".")
         val cost = stringInTextField.toDoubleOrNull()
         return if (cost == null || cost == 0.0) {
             0.0
