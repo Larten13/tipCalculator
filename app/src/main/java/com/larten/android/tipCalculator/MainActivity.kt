@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.calculateButton.setOnClickListener { displaySum() }
     }
-
+// Проверка введенной суммы
     private fun calculateCost(): Double {
         val stringInTextField = binding.costOfServiceEditText.text
             .toString()
@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
             0.0
         } else cost
     }
-    private fun numOfUser(): Int {
+//  Проверка количества гостей
+    private fun numOfGuests(): Int {
         val numOfUser = when (binding.userOptions.checkedRadioButtonId) {
             R.id.user1 -> 1
             R.id.user2 -> 2
@@ -36,29 +37,31 @@ class MainActivity : AppCompatActivity() {
         }
         return numOfUser
     }
-    private fun calculateSumOfUser(): Double {
+//    Подсчет суммы с одного человека
+    private fun calculateSumOfGuest(): Double {
         val cost = calculateCost()
-        val numOfUser = numOfUser()
-        var sumOfUser = cost / numOfUser
-        if (binding.roundUpSwitch.isChecked) sumOfUser = ceil(sumOfUser)
-        return sumOfUser
+        val numOfGuests = numOfGuests()
+        var sumOfGuest = cost / numOfGuests
+        if (binding.roundUpSwitch.isChecked) sumOfGuest = ceil(sumOfGuest)
+        return sumOfGuest
     }
-    private fun calculateTipOfUser(): Double {
+//    Подсчет чаевых с одного человека
+    private fun calculateTipOfGuest(): Double {
         val cost = calculateCost()
-        val numOfUser = numOfUser()
+        val numOfGuests = numOfGuests()
         val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
             R.id.option_five_percent -> 0.05
             R.id.option_three_percent -> 0.03
             else -> 0.1
         }
-        var tipOfUser = cost * tipPercentage / numOfUser
+        var tipOfUser = cost * tipPercentage / numOfGuests
         if (binding.roundUpSwitch.isChecked) tipOfUser = ceil(tipOfUser)
         return tipOfUser
     }
-
+//    Подсчет общей суммы с человека с учетом чаевых и форматирование этого вывода
     private fun displaySum() {
-        val tip = calculateTipOfUser()
-        val sumOfUser = calculateSumOfUser()
+        val tip = calculateTipOfGuest()
+        val sumOfUser = calculateSumOfGuest()
         val summaryOfUser = tip + sumOfUser
         val formattedSum = NumberFormat.getCurrencyInstance().format(summaryOfUser)
         binding.tipResult.text = getString(R.string.tip_amount, formattedSum)
