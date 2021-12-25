@@ -1,10 +1,6 @@
 package com.larten.android.tipCalculator
 
-import android.content.Context
 import android.os.Bundle
-import android.view.KeyEvent
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import com.larten.android.tipCalculator.databinding.ActivityMainBinding
 import java.text.NumberFormat
@@ -23,7 +19,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateCost(): Double {
-        val stringInTextField = binding.costOfServiceEditText.text.toString().replace(",", ".")
+        val stringInTextField = binding.costOfServiceEditText.text
+            .toString()
+            .replace(",", ".")
         val cost = stringInTextField.toDoubleOrNull()
         return if (cost == null || cost == 0.0) {
             0.0
@@ -57,7 +55,6 @@ class MainActivity : AppCompatActivity() {
         if (binding.roundUpSwitch.isChecked) tipOfUser = ceil(tipOfUser)
         return tipOfUser
     }
-
 
     private fun displaySum() {
         val tip = calculateTipOfUser()

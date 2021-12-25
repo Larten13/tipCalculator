@@ -103,17 +103,18 @@ class CalculatorTests {
 
     @Test
     fun calculate_for_2_person_3_percentage_with_comma() {
+//      enter cost with comma to edit text
         onView(withId(R.id.cost_of_service_edit_text))
             .perform(typeText("300,00"))
-
+//      enter the number of users to radio button
         onView(withId(R.id.user2)).perform(click())
-
+//      enter percentage of tip to radio button
         onView(withId(R.id.option_three_percent)).perform(click())
-
+//      click to switch round up to switch
         onView(withId(R.id.round_up_switch)).perform(click())
-
+//      click button for calculate
         onView(withId(R.id.calculate_button)).perform(click())
-
+//      check result with expected result
         onView(withId(R.id.tip_result))
             .check(matches(withText(containsString("154,50"))))
     }
